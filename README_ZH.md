@@ -16,7 +16,7 @@ https://central.sonatype.com/artifact/io.github.huahill/jpackage-maven-plugin
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 </plugin>
 ```
 
@@ -57,7 +57,7 @@ https://central.sonatype.com/artifact/io.github.huahill/jpackage-maven-plugin
         <plugin>
             <groupId>io.github.huahill</groupId>
             <artifactId>jpackage-maven-plugin</artifactId>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </plugin>
     </plugins>
 </build>
@@ -93,7 +93,7 @@ sdk env
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>package-app</id>
@@ -127,7 +127,7 @@ sdk env
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>package-app</id>
@@ -163,7 +163,7 @@ sdk env
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>package-app</id>
@@ -194,7 +194,7 @@ sdk env
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>leyden-package</id>

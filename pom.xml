@@ -7,7 +7,7 @@
 
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.1</version>
     <packaging>maven-plugin</packaging>
 
     <name>JPackage Maven Plugin</name>

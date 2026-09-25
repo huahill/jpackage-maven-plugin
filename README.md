@@ -16,7 +16,7 @@ https://central.sonatype.com/artifact/io.github.huahill/jpackage-maven-plugin
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 </plugin>
 ```
 
@@ -60,7 +60,7 @@ is required:
         <plugin>
             <groupId>io.github.huahill</groupId>
             <artifactId>jpackage-maven-plugin</artifactId>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </plugin>
     </plugins>
 </build>
@@ -97,7 +97,7 @@ The sample writes packaging output under its own `target/` directory.
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>package-app</id>
@@ -131,7 +131,7 @@ project that writes the jar directly into `target/jpackage-input`.
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>package-app</id>
@@ -168,7 +168,7 @@ runtime image with the JavaFX modules.
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>package-app</id>
@@ -199,7 +199,7 @@ For JPMS apps, put the modular application jar and modular dependencies on
 <plugin>
     <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <executions>
         <execution>
             <id>leyden-package</id>
