@@ -88,17 +88,21 @@ rewrites `pom.xml` to Maven model `4.0.0` so Sonatype Central can associate the
 uploaded files with Maven coordinates. The committed source POM remains Maven
 `4.1.0`.
 
-After the publish job succeeds, a second workflow job checks out `main`, bumps
-the root project version to the next patch snapshot, commits it, and pushes it
-back to `main`. For example, publishing `v0.1.0` bumps `main` to
-`0.1.1-SNAPSHOT`.
+After the publish job succeeds, two follow-up jobs run:
+
+- Create a GitHub Release for the tag, or update it if it already exists.
+- Check out `main`, bump the root project version to the next patch snapshot,
+  commit it, and push it back to `main`. For example, publishing `v0.1.0`
+  bumps `main` to `0.1.1-SNAPSHOT`.
 
 GitHub Packages can be added later as a secondary distribution target for
 snapshots or early access builds.
 
 ## Release Notes
 
-Update `CHANGELOG.md` before tagging a release.
+GitHub Release notes are generated from commit subjects since the previous
+`v*` tag, plus the Maven Central coordinates. Edit the GitHub Release after
+it is created if you need a curated summary.
 
 Release notes should include:
 

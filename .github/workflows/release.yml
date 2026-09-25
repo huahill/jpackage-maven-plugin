@@ -129,6 +129,72 @@ jobs:
             -DautoPublish=true \
             -Dmaven.consumer.pom=false
 
+
+  github-release:
+    name: Create GitHub Release
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          git fetch --tags --force
+          version="${GITHUB_REF_NAME#v}"
+          tag="${GITHUB_REF_NAME}"
+          notes_file="${RUNNER_TEMP}/github-release-notes.md"
+          previous_tag="$(git tag --list 'v*' --sort=-version:refname | while IFS= read -r candidate; do
+            if [[ "${candidate}" != "${tag}" ]]; then
+              printf '%s\n' "${candidate}"
+              break
+            fi
+          done)"
+
+          {
+            printf 'Maven Central:\n\n```xml\n<plugin>\n    <groupId>io.github.huahill</groupId>\n    <artifactId>jpackage-maven-plugin</artifactId>\n    <version>%s</version>\n</plugin>\n```\n\n' "${version}"
+            printf 'https://central.sonatype.com/artifact/io.github.huahill/jpackage-maven-plugin/%s\n\n' "${version}"
+            echo '## Changes'
+            if [[ -n "${previous_tag}" ]]; then
+              git log --no-merges --format="- %s" "${previous_tag}..${tag}"
+            else
+              git log --no-merges --format="- %s" "${tag}"
+            fi
+            echo
+            echo '## Full Changelog'
+            if [[ -n "${previous_tag}" ]]; then
+              printf '[%s...%s](%s/%s/compare/%s...%s)\n' \
+                "${previous_tag}" "${tag}" "${GITHUB_SERVER_URL}" "${GITHUB_REPOSITORY}" \
+                "${previous_tag}" "${tag}"
+            else
+              printf '[View source](%s/%s/tree/%s)\n' \
+                "${GITHUB_SERVER_URL}" "${GITHUB_REPOSITORY}" "${tag}"
+            fi
+          } > "${notes_file}"
+
+          if gh release view "${tag}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            gh release edit "${tag}" --repo "${GITHUB_REPOSITORY}" \
+              --title "${version}" --draft=false --prerelease=false \
+              --notes-file "${notes_file}"
+            exit 0
+          fi
+
+          if [[ "${version}" == *-* ]]; then
+            gh release create "${tag}" --verify-tag \
+              --repo "${GITHUB_REPOSITORY}" --title "${version}" --prerelease \
+              --notes-file "${notes_file}"
+          else
+            gh release create "${tag}" --verify-tag \
+              --repo "${GITHUB_REPOSITORY}" --title "${version}" \
+              --notes-file "${notes_file}"
+          fi
+
   bump-next-development-version:
     name: Bump next development version
     needs: publish
