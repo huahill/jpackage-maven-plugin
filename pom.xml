@@ -165,6 +165,7 @@
             <id>release</id>
             <properties>
                 <gpg.skip>false</gpg.skip>
+                <maven.consumer.pom>false</maven.consumer.pom>
             </properties>
             <build>
                 <plugins>

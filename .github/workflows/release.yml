@@ -88,16 +88,46 @@ jobs:
           pom.write_text(text)
           PY
 
+      - name: Build and sign release artifacts
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: ./mvnw -B -P release -DskipTests install -Dmaven.consumer.pom=false
+
+      - name: Reject Maven 4 companion POMs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          roots = [
+              Path.home() / ".m2/repository/io/github/huahill/jpackage-maven-plugin",
+              Path("target"),
+          ]
+          bad = []
+          for root in roots:
+              if not root.exists():
+                  continue
+              for path in root.rglob("*"):
+                  name = path.name
+                  if "-consumer.pom" in name or "-build.pom" in name:
+                      bad.append(str(path))
+          if bad:
+              print("Unexpected Maven 4 companion POM files:")
+              print("\n".join(sorted(bad)))
+              raise SystemExit(1)
+          print("No Maven 4 companion POMs found")
+          PY
+
       - name: Publish
         env:
           CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
           CENTRAL_TOKEN: ${{ secrets.CENTRAL_TOKEN }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          ./mvnw -B -P release -DskipTests install \
+          ./mvnw -B -P release -DskipTests \
             org.sonatype.central:central-publishing-maven-plugin:0.10.0:publish \
             -DautoPublish=true \
-            -Dmaven.consumer.pom.flatten=false
+            -Dmaven.consumer.pom=false
 
   bump-next-development-version:
     name: Bump next development version

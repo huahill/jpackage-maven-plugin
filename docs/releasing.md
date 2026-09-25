@@ -72,12 +72,16 @@ The publish job runs:
 ./mvnw -B -P release -DskipTests install \
   org.sonatype.central:central-publishing-maven-plugin:0.10.0:publish \
   -DautoPublish=true \
-  -Dmaven.consumer.pom.flatten=false
+  -Dmaven.consumer.pom=false
 ```
 
 The `release` Maven profile attaches sources, attaches Javadocs, signs
 artifacts with GPG, uploads the deployment to the Central Portal, and auto
 publishes after validation.
+
+Maven 4 otherwise attaches a `consumer` classifier POM that Central cannot
+map to Maven coordinates. The release profile and publish command disable
+that companion artifact with `-Dmaven.consumer.pom=false`.
 
 Before running the Maven publish command, the GitHub workflow temporarily
 rewrites `pom.xml` to Maven model `4.0.0` so Sonatype Central can associate the
