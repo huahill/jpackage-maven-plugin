@@ -1,4 +1,4 @@
-package io.github.youngledo.maven.jpackage;
+package io.github.huahill.maven.jpackage;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -13,7 +13,7 @@ class JLinkMojoTest {
         var descriptor = Files.readString(Path.of("target/classes/META-INF/maven/plugin.xml"));
 
         assertTrue(descriptor.contains("<goal>jlink</goal>"));
-        assertTrue(descriptor.contains("<implementation>io.github.youngledo.maven.jpackage.JLinkMojo</implementation>"));
+        assertTrue(descriptor.contains("<implementation>io.github.huahill.maven.jpackage.JLinkMojo</implementation>"));
         assertTrue(descriptor.contains("<phase>package</phase>"));
     }
 }

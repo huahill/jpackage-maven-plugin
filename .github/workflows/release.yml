@@ -12,6 +12,7 @@ jobs:
   publish:
     name: Publish to Maven Central
     runs-on: ubuntu-latest
+    environment: jpackage-maven-plugin
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -4,7 +4,7 @@ This project publishes release tags to Maven Central through GitHub Actions and
 the Sonatype Central Publisher Portal.
 
 Artifact page:
-https://central.sonatype.com/artifact/io.github.youngledo/jpackage-maven-plugin
+https://central.sonatype.com/artifact/io.github.huahill/jpackage-maven-plugin
 
 ## Versioning
 
@@ -40,7 +40,8 @@ systems:
 
 ## GitHub Secrets
 
-Configure these repository secrets before pushing a release tag:
+Configure these secrets on the `jpackage-maven-plugin` GitHub Environment
+before pushing a release tag:
 
 | Secret | Purpose |
 |---|---|

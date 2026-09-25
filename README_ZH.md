@@ -10,11 +10,11 @@
 ## 坐标
 
 Maven Central：
-https://central.sonatype.com/artifact/io.github.youngledo/jpackage-maven-plugin
+https://central.sonatype.com/artifact/io.github.huahill/jpackage-maven-plugin
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
 </plugin>
@@ -55,7 +55,7 @@ https://central.sonatype.com/artifact/io.github.youngledo/jpackage-maven-plugin
 <build>
     <plugins>
         <plugin>
-            <groupId>io.github.youngledo</groupId>
+            <groupId>io.github.huahill</groupId>
             <artifactId>jpackage-maven-plugin</artifactId>
             <version>0.1.0</version>
         </plugin>
@@ -91,7 +91,7 @@ sdk env
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>
@@ -125,7 +125,7 @@ sdk env
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>
@@ -161,7 +161,7 @@ sdk env
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>
@@ -192,7 +192,7 @@ sdk env
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>

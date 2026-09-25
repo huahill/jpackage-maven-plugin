@@ -1,4 +1,4 @@
-package io.github.youngledo.maven.jpackage;
+package io.github.huahill.maven.jpackage;
 
 import java.io.IOException;
 import java.nio.file.FileVisitResult;

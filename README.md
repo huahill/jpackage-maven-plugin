@@ -10,11 +10,11 @@ Maven plugin for packaging desktop Java applications with the JDK `jlink` and
 ## Coordinates
 
 Maven Central:
-https://central.sonatype.com/artifact/io.github.youngledo/jpackage-maven-plugin
+https://central.sonatype.com/artifact/io.github.huahill/jpackage-maven-plugin
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
 </plugin>
@@ -58,7 +58,7 @@ is required:
 <build>
     <plugins>
         <plugin>
-            <groupId>io.github.youngledo</groupId>
+            <groupId>io.github.huahill</groupId>
             <artifactId>jpackage-maven-plugin</artifactId>
             <version>0.1.0</version>
         </plugin>
@@ -95,7 +95,7 @@ The sample writes packaging output under its own `target/` directory.
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>
@@ -129,7 +129,7 @@ project that writes the jar directly into `target/jpackage-input`.
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>
@@ -166,7 +166,7 @@ runtime image with the JavaFX modules.
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>
@@ -197,7 +197,7 @@ For JPMS apps, put the modular application jar and modular dependencies on
 
 ```xml
 <plugin>
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
     <version>0.1.0</version>
     <executions>

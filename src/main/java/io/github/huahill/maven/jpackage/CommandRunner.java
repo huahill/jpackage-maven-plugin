@@ -1,4 +1,4 @@
-package io.github.youngledo.maven.jpackage;
+package io.github.huahill.maven.jpackage;
 
 import java.util.List;
 

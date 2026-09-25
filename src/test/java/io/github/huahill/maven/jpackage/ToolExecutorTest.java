@@ -1,4 +1,4 @@
-package io.github.youngledo.maven.jpackage;
+package io.github.huahill.maven.jpackage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -159,8 +159,8 @@ class ToolExecutorTest {
         assertFalse(command.contains("--description"));
         assertFalse(command.contains("--mac-package-identifier"));
         assertFalse(command.contains("--mac-package-name"));
-        assertFalse(command.contains("Youngledo"));
-        assertFalse(command.contains("io.github.youngledo"));
+        assertFalse(command.contains("huahill"));
+        assertFalse(command.contains("io.github.huahill"));
     }
 
     @Test

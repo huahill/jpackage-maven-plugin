@@ -5,14 +5,14 @@
          root="true">
     <modelVersion>4.1.0</modelVersion>
 
-    <groupId>io.github.youngledo</groupId>
+    <groupId>io.github.huahill</groupId>
     <artifactId>jpackage-maven-plugin</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>maven-plugin</packaging>
 
     <name>JPackage Maven Plugin</name>
     <description>Maven plugin for jlink, jpackage, and Project Leyden desktop application packaging.</description>
-    <url>https://github.com/youngledo/jpackage-maven-plugin</url>
+    <url>https://github.com/huahill/jpackage-maven-plugin</url>
     <inceptionYear>2026</inceptionYear>
 
     <licenses>
@@ -25,15 +25,15 @@
 
     <developers>
         <developer>
-            <id>youngledo</id>
-            <name>Youngledo</name>
+            <id>huahill</id>
+            <name>huahill</name>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/youngledo/jpackage-maven-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/youngledo/jpackage-maven-plugin.git</developerConnection>
-        <url>https://github.com/youngledo/jpackage-maven-plugin</url>
+        <connection>scm:git:https://github.com/huahill/jpackage-maven-plugin.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/huahill/jpackage-maven-plugin.git</developerConnection>
+        <url>https://github.com/huahill/jpackage-maven-plugin</url>
         <tag>HEAD</tag>
     </scm>
 

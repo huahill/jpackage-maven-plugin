@@ -61,7 +61,7 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>io.github.youngledo</groupId>
+                <groupId>io.github.huahill</groupId>
                 <artifactId>jpackage-maven-plugin</artifactId>
                 <version>${jpackage.plugin.version}</version>
                 <executions>
