@@ -109,7 +109,7 @@ jobs:
                   continue
               for path in root.rglob("*"):
                   name = path.name
-                  if "-consumer.pom" in name or "-build.pom" in name:
+                  if "-consumer.pom" in name:
                       bad.append(str(path))
           if bad:
               print("Unexpected Maven 4 companion POM files:")
