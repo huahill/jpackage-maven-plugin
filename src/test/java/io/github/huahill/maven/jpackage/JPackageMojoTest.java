@@ -23,7 +23,7 @@ class JPackageMojoTest {
 
         assertParameters(descriptor,
                 "optionFiles", "name", "packageType", "packageVersion", "copyright", "description",
-                "destination", "icon", "temp", "vendor", "verbose", "addModules", "jlinkOptions",
+                "destination", "icon", "temp", "vendor", "verbose", "modules", "jlinkOptions",
                 "modulePath", "runtimeImage", "appContent", "input", "addLaunchers", "arguments",
                 "javaOptions", "mainJar", "mainClass", "module", "aboutUrl", "appImage",
                 "fileAssociations", "installDir", "launcherAsService", "licenseFile", "resourceDir",

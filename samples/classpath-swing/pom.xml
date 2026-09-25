@@ -51,9 +51,9 @@
                             <input>${project.build.directory}/jpackage-input</input>
                             <mainJar>${project.build.finalName}.jar</mainJar>
                             <mainClass>com.acme.sample.SwingSampleApp</mainClass>
-                            <addModules>
+                            <modules>
                                 <module>java.desktop</module>
-                            </addModules>
+                            </modules>
                         </configuration>
                     </execution>
                 </executions>

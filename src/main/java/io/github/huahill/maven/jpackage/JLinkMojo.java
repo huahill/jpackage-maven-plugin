@@ -18,7 +18,7 @@ public class JLinkMojo implements org.apache.maven.api.plugin.Mojo {
     private List<Path> modulePath = List.of();
 
     @Parameter(required = true)
-    private List<String> addModules = List.of();
+    private List<String> modules = List.of();
 
     @Parameter(required = true)
     private Path output;
@@ -49,14 +49,14 @@ public class JLinkMojo implements org.apache.maven.api.plugin.Mojo {
         if (modulePath.isEmpty()) {
             throw new MojoException("Missing required jlink modulePath");
         }
-        if (addModules.isEmpty()) {
-            throw new MojoException("Missing required jlink addModules");
+        if (modules.isEmpty()) {
+            throw new MojoException("Missing required jlink modules");
         }
         if (output == null) {
             throw new MojoException("Missing required jlink output");
         }
         var executor = new ToolExecutor(javaHome, new ProcessCommandRunner(log));
-        executor.run(executor.jlinkCommand(modulePath, output, addModules, noHeaderFiles, noManPages, stripDebug,
+        executor.run(executor.jlinkCommand(modulePath, output, modules, noHeaderFiles, noManPages, stripDebug,
                 compress, bindServices, extraOptions));
     }
 }

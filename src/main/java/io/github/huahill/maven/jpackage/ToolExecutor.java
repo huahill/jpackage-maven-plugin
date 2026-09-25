@@ -14,7 +14,7 @@ final class ToolExecutor {
         this.commandRunner = commandRunner;
     }
 
-    List<String> jlinkCommand(List<Path> modulePath, Path output, List<String> addModules, boolean noHeaderFiles,
+    List<String> jlinkCommand(List<Path> modulePath, Path output, List<String> modules, boolean noHeaderFiles,
             boolean noManPages, boolean stripDebug, String compress, boolean bindServices, List<String> extraOptions) {
         var command = new ArrayList<String>();
         command.add(javaHome.resolve("bin").resolve("jlink").toString());
@@ -32,7 +32,7 @@ final class ToolExecutor {
         command.add("--module-path");
         command.add(joinPaths(modulePath));
         command.add("--add-modules");
-        command.add(String.join(",", addModules));
+        command.add(String.join(",", modules));
         if (compress != null && !compress.isBlank()) {
             command.add("--compress");
             command.add(compress);
@@ -115,7 +115,7 @@ final class ToolExecutor {
     }
 
     private void addRuntimeOptions(List<String> command, JPackageOptions options) {
-        addCsvValues(command, "--add-modules", options.addModules());
+        addCsvValues(command, "--add-modules", options.modules());
         addRepeatedValues(command, "--jlink-options", options.jlinkOptions());
         if (!options.modulePath().isEmpty()) {
             addValue(command, "--module-path", joinPaths(options.modulePath()));

@@ -108,9 +108,9 @@ sdk env
                 <input>${project.build.directory}/jpackage-input</input>
                 <mainJar>${project.build.finalName}.jar</mainJar>
                 <mainClass>com.acme.sample.SwingSampleApp</mainClass>
-                <addModules>
+                <modules>
                     <module>java.desktop</module>
-                </addModules>
+                </modules>
             </configuration>
         </execution>
     </executions>
@@ -145,9 +145,9 @@ sdk env
                 <modulePath>
                     <path>${project.build.directory}/jpackage-input</path>
                 </modulePath>
-                <addModules>
+                <modules>
                     <module>javafx.controls</module>
-                </addModules>
+                </modules>
             </configuration>
         </execution>
     </executions>
@@ -238,7 +238,7 @@ JPMS Leyden 启动通过 `module` 配置：
 | 参数 | 工具选项 | 说明 |
 |---|---|---|
 | `modulePath` | `--module-path` | 该 goal 必填。 |
-| `addModules` | `--add-modules` | 该 goal 必填。 |
+| `modules` | `--add-modules` | 该 goal 必填。 |
 | `output` | `--output` | 该 goal 必填。 |
 | `noHeaderFiles` | `--no-header-files` | 布尔值。 |
 | `noManPages` | `--no-man-pages` | 布尔值。 |
@@ -272,7 +272,7 @@ JPMS Leyden 启动通过 `module` 配置：
 
 | 参数 | 工具选项 |
 |---|---|
-| `addModules` | `--add-modules` |
+| `modules` | `--add-modules` |
 | `jlinkOptions` | `--jlink-options` |
 | `modulePath` | `--module-path` |
 | `runtimeImage` | `--runtime-image` |

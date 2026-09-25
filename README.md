@@ -112,9 +112,9 @@ The sample writes packaging output under its own `target/` directory.
                 <input>${project.build.directory}/jpackage-input</input>
                 <mainJar>${project.build.finalName}.jar</mainJar>
                 <mainClass>com.acme.sample.SwingSampleApp</mainClass>
-                <addModules>
+                <modules>
                     <module>java.desktop</module>
-                </addModules>
+                </modules>
             </configuration>
         </execution>
     </executions>
@@ -149,9 +149,9 @@ project that writes the jar directly into `target/jpackage-input`.
                 <modulePath>
                     <path>${project.build.directory}/jpackage-input</path>
                 </modulePath>
-                <addModules>
+                <modules>
                     <module>javafx.controls</module>
-                </addModules>
+                </modules>
             </configuration>
         </execution>
     </executions>
@@ -244,7 +244,7 @@ JPMS Leyden launch is configured with `module`:
 | Parameter | Tool option | Notes |
 |---|---|---|
 | `modulePath` | `--module-path` | Required by this goal. |
-| `addModules` | `--add-modules` | Required by this goal. |
+| `modules` | `--add-modules` | Required by this goal. |
 | `output` | `--output` | Required by this goal. |
 | `noHeaderFiles` | `--no-header-files` | Boolean. |
 | `noManPages` | `--no-man-pages` | Boolean. |
@@ -278,7 +278,7 @@ Runtime image options:
 
 | Parameter | Tool option |
 |---|---|
-| `addModules` | `--add-modules` |
+| `modules` | `--add-modules` |
 | `jlinkOptions` | `--jlink-options` |
 | `modulePath` | `--module-path` |
 | `runtimeImage` | `--runtime-image` |

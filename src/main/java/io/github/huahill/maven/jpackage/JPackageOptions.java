@@ -17,7 +17,7 @@ record JPackageOptions(
         boolean verbose,
         boolean help,
         boolean toolVersion,
-        List<String> addModules,
+        List<String> modules,
         List<String> jlinkOptions,
         List<Path> modulePath,
         Path runtimeImage,
@@ -70,7 +70,7 @@ record JPackageOptions(
 
     JPackageOptions {
         optionFiles = safe(optionFiles);
-        addModules = safe(addModules);
+        modules = safe(modules);
         jlinkOptions = safe(jlinkOptions);
         modulePath = safe(modulePath);
         appContent = safe(appContent);

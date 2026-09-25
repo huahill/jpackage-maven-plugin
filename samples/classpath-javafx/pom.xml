@@ -81,9 +81,9 @@
                             <modulePath>
                                 <path>${project.build.directory}/jpackage-input</path>
                             </modulePath>
-                            <addModules>
+                            <modules>
                                 <module>javafx.controls</module>
-                            </addModules>
+                            </modules>
                         </configuration>
                     </execution>
                 </executions>

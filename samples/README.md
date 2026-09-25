@@ -20,7 +20,7 @@ Then run a sample:
 | Project | Shape |
 |---|---|
 | `classpath-swing` | Non-modular Swing application using `mainJar` and `mainClass`. |
-| `classpath-javafx` | Non-modular JavaFX application using `mainJar`, `mainClass`, JavaFX runtime dependencies, and `addModules`. |
+| `classpath-javafx` | Non-modular JavaFX application using `mainJar`, `mainClass`, JavaFX runtime dependencies, and `modules`. |
 | `jpms-swing` | Modular Swing application using `module`. |
 
 The three samples have been manually verified on macOS for `app-image` output.

@@ -54,7 +54,7 @@ public class JPackageMojo implements org.apache.maven.api.plugin.Mojo {
     private boolean toolVersion;
 
     @Parameter
-    private List<String> addModules = List.of();
+    private List<String> modules = List.of();
 
     @Parameter
     private List<String> jlinkOptions = List.of();
@@ -218,7 +218,7 @@ public class JPackageMojo implements org.apache.maven.api.plugin.Mojo {
 
     private JPackageOptions options() {
         return new JPackageOptions(optionFiles, name, packageType, packageVersion, copyright, description,
-                destination, icon, temp, vendor, verbose, help, toolVersion, addModules, jlinkOptions,
+                destination, icon, temp, vendor, verbose, help, toolVersion, modules, jlinkOptions,
                 modulePath, runtimeImage, appContent, input, addLaunchers, arguments, javaOptions,
                 mainClass, mainJar, module, aboutUrl, appImage, fileAssociations, installDir,
                 launcherAsService, licenseFile, resourceDir, macAppCategory, macAppImageSignIdentity,
